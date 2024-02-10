@@ -1,0 +1,27 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// npx prisma migrate dev
+// add migration name
+// npx prisma generate
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Plant {
+  id            Int    @id @default(autoincrement())
+  commonName    String
+  botanicalName String
+  sunLight      String
+  water         String
+  price         Int
+  description   String
+  height        String
+  width         String
+}
